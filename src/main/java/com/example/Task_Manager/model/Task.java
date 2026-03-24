@@ -12,46 +12,25 @@ public class Task {
     private String title;
     private String description;
 
-    // ✅ RELATION WITH USER
+    // ✅ ADD THIS (User relation)
     @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
-    // Default constructor
-    public Task() {}
+    // getters setters
+    public Long getId() { return id; }
 
-    // Getters & Setters
+    public void setId(Long id) { this.id = id; }
 
-    public Long getId() {
-        return id;
-    }
+    public String getTitle() { return title; }
 
-    public String getTitle() {
-        return title;
-    }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
 
-    public User getUser() {
-        return user;
-    }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // ✅ ADD THESE (IMPORTANT 🔥)
+    public User getUser() { return user; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    // ✅ THIS WAS MISSING
-    public void setUser(User user) {
-        this.user = user;
-    }
+    public void setUser(User user) { this.user = user; }
 }
